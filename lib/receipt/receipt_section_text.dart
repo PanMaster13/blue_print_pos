@@ -1,6 +1,6 @@
-import 'package:blue_print_pos/receipt/collection_style.dart';
-import 'package:blue_print_pos/receipt/receipt_image.dart';
-import 'package:blue_print_pos/receipt/receipt_pixel_space.dart';
+import 'collection_style.dart';
+import 'receipt_image.dart';
+import 'receipt_pixel_space.dart';
 
 import 'receipt_alignment.dart';
 import 'receipt_line.dart';
@@ -9,6 +9,7 @@ import 'receipt_text_left_right.dart';
 import 'receipt_text_size_type.dart';
 import 'receipt_text_style.dart';
 import 'receipt_text_style_type.dart';
+import 'receipt_item_listing.dart';
 
 class ReceiptSectionText {
   ReceiptSectionText() : _data = <String>[];
@@ -78,6 +79,11 @@ ${CollectionStyle.all}
       alignment: alignment,
     );
     _data.add(receiptText.html);
+  }
+
+  void addItemListing(List<List<String>> list, int maxChar){
+    final ReceiptItemListing receiptItemListing = ReceiptItemListing(list, maxChar);
+    _data.add(receiptItemListing.html);
   }
 
   /// Handler tag of text (span or b) and put inside body html

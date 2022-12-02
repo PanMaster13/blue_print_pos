@@ -1,4 +1,4 @@
-# Introduction
+ # Introduction
 
 This plugin to help use bluetooth printer in Android/iOS. Support for text, image, add new line or 
 line dashed and QR. 
