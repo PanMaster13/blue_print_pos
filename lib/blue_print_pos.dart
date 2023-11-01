@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'dart:io';
-import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:blue_print_pos/models/batch_print_options.dart';
@@ -10,16 +9,16 @@ import 'package:blue_print_pos/scanner/blue_scanner.dart';
 import 'package:blue_thermal_printer/blue_thermal_printer.dart' as blue_thermal;
 import 'package:flutter/services.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart' as flutter_blue;
-import 'package:flutter_blue_plus/gen/flutterblueplus.pb.dart' as proto;
+import 'package:flutter_esc_pos_utils/flutter_esc_pos_utils.dart';
+// import 'package:flutter_blue_plus/gen/flutterblueplus.pb.dart' as proto;
 import 'package:image/image.dart' as img;
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:flutter_esc_pos_utils/flutter_esc_pos_utils.dart';
-//import 'package:esc_pos_utils_plus/esc_pos_utils.dart';
+// import 'package:esc_pos_utils_plus/esc_pos_utils.dart';
 
 class BluePrintPos {
   BluePrintPos._() {
     _bluetoothAndroid = blue_thermal.BlueThermalPrinter.instance;
-    _bluetoothIOS = flutter_blue.FlutterBluePlus.instance;
+    // _bluetoothIOS = flutter_blue.FlutterBluePlus.instance;
   }
 
   static BluePrintPos get instance => BluePrintPos._();
@@ -30,7 +29,7 @@ class BluePrintPos {
   blue_thermal.BlueThermalPrinter? _bluetoothAndroid;
 
   /// This field is library to handle in iOS Platform
-  flutter_blue.FlutterBluePlus? _bluetoothIOS;
+  // flutter_blue.FlutterBluePlus? _bluetoothIOS;
 
   /// Bluetooth Device model for iOS
   flutter_blue.BluetoothDevice? _bluetoothDeviceIOS;
