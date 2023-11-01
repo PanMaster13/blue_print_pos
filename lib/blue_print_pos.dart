@@ -64,25 +64,26 @@ class BluePrintPos {
             blue_thermal.BluetoothDevice(
                 selectedDevice?.name ?? '', selectedDevice?.address ?? '');
         await _bluetoothAndroid?.connect(bluetoothDeviceAndroid);
-      } else if (Platform.isIOS) {
-        _bluetoothDeviceIOS = flutter_blue.BluetoothDevice.fromProto(
-          proto.BluetoothDevice(
-            name: selectedDevice?.name ?? '',
-            remoteId: selectedDevice?.address ?? '',
-            type: proto.BluetoothDevice_Type.valueOf(selectedDevice?.type ?? 0),
-          ),
-        );
-        final List<flutter_blue.BluetoothDevice> connectedDevices =
-            await _bluetoothIOS?.connectedDevices ??
-                <flutter_blue.BluetoothDevice>[];
-        final int deviceConnectedIndex = connectedDevices
-            .indexWhere((flutter_blue.BluetoothDevice bluetoothDevice) {
-          return bluetoothDevice.id == _bluetoothDeviceIOS?.id;
-        });
-        if (deviceConnectedIndex < 0) {
-          await _bluetoothDeviceIOS?.connect();
-        }
       }
+      // else if (Platform.isIOS) {
+      //   _bluetoothDeviceIOS = flutter_blue.BluetoothDevice.fromProto(
+      //     proto.BluetoothDevice(
+      //       name: selectedDevice?.name ?? '',
+      //       remoteId: selectedDevice?.address ?? '',
+      //       type: proto.BluetoothDevice_Type.valueOf(selectedDevice?.type ?? 0),
+      //     ),
+      //   );
+      //   final List<flutter_blue.BluetoothDevice> connectedDevices =
+      //       await _bluetoothIOS?.connectedDevices ??
+      //           <flutter_blue.BluetoothDevice>[];
+      //   final int deviceConnectedIndex = connectedDevices
+      //       .indexWhere((flutter_blue.BluetoothDevice bluetoothDevice) {
+      //     return bluetoothDevice.id == _bluetoothDeviceIOS?.id;
+      //   });
+      //   if (deviceConnectedIndex < 0) {
+      //     await _bluetoothDeviceIOS?.connect();
+      //   }
+      // }
 
       _isConnected = true;
       selectedDevice?.connected = true;
@@ -104,10 +105,11 @@ class BluePrintPos {
         await _bluetoothAndroid?.disconnect();
       }
       _isConnected = false;
-    } else if (Platform.isIOS) {
-      await _bluetoothDeviceIOS?.disconnect();
-      _isConnected = false;
     }
+    // else if (Platform.isIOS) {
+    //   await _bluetoothDeviceIOS?.disconnect();
+    //   _isConnected = false;
+    // }
 
     return ConnectionStatus.disconnect;
   }
