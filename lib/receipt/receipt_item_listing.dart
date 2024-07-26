@@ -132,15 +132,13 @@ class ReceiptItemListingV2 {
 
     int index = 1;
     for (final List<String> item in itemList) {
-      final int totalLength = item.join().length;
-      if (totalLength <= maxChar) {
-        result += '''
+      result += '''
         <tr>
           <td align="left" width="10%">${index.toString()}</td>
           <td align="left" width="90%">${item[0]}</td>
         </tr>
         ''';
-        result += '''
+      result += '''
         <tr>
           <th align="left" width="25%">Qty</th>
           <th align="left" width="25%">UOM</th>
@@ -148,7 +146,7 @@ class ReceiptItemListingV2 {
           <th align="left" width="25%">Sub Total</th>
         </tr>
         ''';
-        result += '''
+      result += '''
         <tr>
           <td align= "left" width="25%">${item[1]}</td>
           <td align= "left" width="25%">${item[2]}</td>
@@ -156,44 +154,6 @@ class ReceiptItemListingV2 {
           <td align= "left" width="25%">${item[4]}</td>
         </tr>
         ''';
-      } else {
-        final int descLength = maxChar - index.toString().length - item[1].length - item[2].length;
-        final int iter = (item[0].length / descLength).floor();
-        int start = 0;
-
-        for (int i = 0; i < iter; i++) {
-          if (i == 0) {
-            result+='''
-            <tr>
-              <td align= "left" width="10%">${index.toString()}</td>
-              <td align= "left" width="60%">${item[0].substring(start,start+descLength)}</td>
-              <td align= "left" width="10%">${item[1]}</td>
-              <td align= "left" width="20%">${item[2]}</td>
-            </tr>
-            ''';
-          } else {
-            result+='''
-          <tr>
-            <td align= "left" width="10%"></td>
-            <td align= "left" width="60%">${item[0].substring(start,start+descLength)}</td>
-            <td align= "left" width="10%"></td>
-            <td align= "left" width="20%"></td>
-          </tr>
-          ''';
-          }
-
-          start += descLength;
-        }
-
-        result+='''
-          <tr>
-            <td align= "left" width="10%"></td>
-            <td align= "left" width="60%">${item[0].substring(start,item[0].length)}</td>
-            <td align= "left" width="10%"></td>
-            <td align= "left" width="20%"></td>
-          </tr>
-          ''';
-      }
       index += 1;
     }
 
