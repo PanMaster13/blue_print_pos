@@ -86,6 +86,11 @@ ${CollectionStyle.all}
     _data.add(receiptItemListing.html);
   }
 
+  void addItemListingV2(List<List<String>> list, int maxChar) {
+    final ReceiptItemListingV2 receiptItemListingV2 = ReceiptItemListingV2(list, maxChar);
+    _data.add(receiptItemListingV2.html);
+  }
+
   /// Handler tag of text (span or b) and put inside body html
   /// This will generate left right text with two value input from parameter
   /// [leftText] and [rightText]
