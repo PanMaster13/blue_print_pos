@@ -113,3 +113,10 @@ class ReceiptItemListing {
       + '''</table>''';
 
 }
+
+class ReceiptItemListingV2 {
+  ReceiptItemListingV2(this.itemList, this.maxChar,);
+
+  final List<List<String>> itemList;
+  final int maxChar;
+}
