@@ -135,7 +135,7 @@ class ReceiptItemListingV2 {
       result += '''
         <tr>
           <td align="left" width="10%">${index.toString()}</td>
-          <td align="left" width="90%">${item[0]}</td>
+          <td align="left" width="90%" colspan="3">${item[0]}</td>
         </tr>
         ''';
       result += '''
@@ -177,7 +177,7 @@ class ReceiptItemListingV2 {
      <table>
       <tr>
         <th align= "left" width="10%">No</th>
-        <th align= "left" width="90%">Description</th>
+        <th align= "left" width="90%" colspan="3">Description</th>
       </tr>
     '''
       + generateRows()
