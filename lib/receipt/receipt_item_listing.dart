@@ -139,10 +139,10 @@ class ReceiptItemListingV2 {
         ''';
       result += '''
         <tr>
-          <td width="25%" style="border-bottom-style: dashed;">${item[1]}</td>
-          <td width="25%" style="border-bottom-style: dashed;">${item[2]}</td>
-          <td width="25%" style="border-bottom-style: dashed;">${item[3]}</td>
-          <td width="25%" style="border-bottom-style: dashed;">${item[4]}</td>
+          <td width="25%">${item[1]}</td>
+          <td width="25%">${item[2]}</td>
+          <td width="25%">${item[3]}</td>
+          <td width="25%">${item[4]}</td>
         </tr>
         ''';
       index += 1;
@@ -165,9 +165,9 @@ class ReceiptItemListingV2 {
         <th width="100%" colspan="4">Description</th>
       </tr>
       <tr>
-        <th width="50%" colspan="2" style="border-bottom-style: dashed;">Qty</th>
-        <th width="25%" style="border-bottom-style: dashed;">Unit Price</th>
-        <th width="25%" style="border-bottom-style: dashed;">Sub Total</th>
+        <th width="50%" colspan="2" style="border-bottom-style:dashed;">Qty</th>
+        <th width="25%" style="border-bottom-style:dashed;">Unit Price</th>
+        <th width="25%" style="border-bottom-style:dashed;">Sub Total</th>
       </tr>
     '''
       + generateRows()
