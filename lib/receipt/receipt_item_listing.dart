@@ -134,24 +134,15 @@ class ReceiptItemListingV2 {
     for (final List<String> item in itemList) {
       result += '''
         <tr>
-          <td align="left" width="10%">${index.toString()}</td>
-          <td align="left" width="90%" colspan="3">${item[0]}</td>
+          <td width="100%" colspan="4">${item[0]}</td>
         </tr>
         ''';
       result += '''
         <tr>
-          <th align="left" width="25%">Qty</th>
-          <th align="left" width="25%">UOM</th>
-          <th align="left" width="25%">Unit Price</th>
-          <th align="left" width="25%">Sub Total</th>
-        </tr>
-        ''';
-      result += '''
-        <tr>
-          <td align= "left" width="25%">${item[1]}</td>
-          <td align= "left" width="25%">${item[2]}</td>
-          <td align= "left" width="25%">${item[3]}</td>
-          <td align= "left" width="25%">${item[4]}</td>
+          <td class="bottomRow" width="25%">${item[1]}</td>
+          <td class="bottomRow" width="25%">${item[2]}</td>
+          <td class="bottomRow" width="25%">${item[3]}</td>
+          <td class="bottomRow" width="25%">${item[4]}</td>
         </tr>
         ''';
       index += 1;
@@ -165,19 +156,21 @@ class ReceiptItemListingV2 {
       table {
         border-collapse: collapse;
       }
-      th{
+	    .bottomRow {
         border-bottom-style: dashed;
-        padding-right: 10px;
       }
-      td{
-        text-align: left;
-        padding-right: 10px;
-      }
+	    td {
+		    text-align: center;
+	    }
     </style>
      <table>
       <tr>
-        <th align= "left" width="10%">No</th>
-        <th align= "left" width="90%" colspan="3">Description</th>
+        <th width="100%" colspan="4">Description</th>
+      </tr>
+      <tr>
+        <th class="bottomRow" width="50%" colspan="2">Qty</th>
+        <th class="bottomRow" width="25%">Unit Price</th>
+        <th class="bottomRow" width="25%">Sub Total</th>
       </tr>
     '''
       + generateRows()
