@@ -139,10 +139,10 @@ class ReceiptItemListingV2 {
         ''';
       result += '''
         <tr>
-          <td class="bottomRow" width="25%">${item[1]}</td>
-          <td class="bottomRow" width="25%">${item[2]}</td>
-          <td class="bottomRow" width="25%">${item[3]}</td>
-          <td class="bottomRow" width="25%">${item[4]}</td>
+          <td width="25%" style="border-bottom-style: dashed;">${item[1]}</td>
+          <td width="25%" style="border-bottom-style: dashed;">${item[2]}</td>
+          <td width="25%" style="border-bottom-style: dashed;">${item[3]}</td>
+          <td width="25%" style="border-bottom-style: dashed;">${item[4]}</td>
         </tr>
         ''';
       index += 1;
@@ -156,9 +156,6 @@ class ReceiptItemListingV2 {
       table {
         border-collapse: collapse;
       }
-	    .bottomRow {
-        border-bottom-style: dashed;
-      }
 	    td {
 		    text-align: center;
 	    }
@@ -168,9 +165,9 @@ class ReceiptItemListingV2 {
         <th width="100%" colspan="4">Description</th>
       </tr>
       <tr>
-        <th class="bottomRow" width="50%" colspan="2">Qty</th>
-        <th class="bottomRow" width="25%">Unit Price</th>
-        <th class="bottomRow" width="25%">Sub Total</th>
+        <th width="50%" colspan="2" style="border-bottom-style: dashed;">Qty</th>
+        <th width="25%" style="border-bottom-style: dashed;">Unit Price</th>
+        <th width="25%" style="border-bottom-style: dashed;">Sub Total</th>
       </tr>
     '''
       + generateRows()
