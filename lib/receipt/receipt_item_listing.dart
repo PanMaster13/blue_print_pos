@@ -156,9 +156,6 @@ class ReceiptItemListingV2 {
       table {
         border-collapse: collapse;
       }
-	    td {
-		    text-align: center;
-	    }
     </style>
      <table>
       <tr>
