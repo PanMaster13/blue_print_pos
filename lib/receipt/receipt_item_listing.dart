@@ -127,46 +127,92 @@ class ReceiptItemListingV2 {
   final List<List<String>> itemList;
   final int maxChar;
 
+  // String generateRows() {
+  //   String result = "";
+  //
+  //   for (final List<String> item in itemList) {
+  //     result += '''
+  //       <tr>
+  //         <td width="100%" colspan="4">${item[0]}</td>
+  //       </tr>
+  //       ''';
+  //     result += '''
+  //       <tr>
+  //         <td width="25%">${item[1]}</td>
+  //         <td width="25%">${item[2]}</td>
+  //         <td width="25%">${item[3]}</td>
+  //         <td width="25%">${item[4]}</td>
+  //       </tr>
+  //       ''';
+  //   }
+  //
+  //   return result;
+  // }
+
   String generateRows() {
     String result = "";
 
-    int index = 1;
     for (final List<String> item in itemList) {
       result += '''
         <tr>
-          <td width="100%" colspan="4">${item[0]}</td>
+          <td width="100%" colspan="5">${item[0]}</td>
         </tr>
         ''';
       result += '''
         <tr>
-          <td width="25%">${item[1]}</td>
-          <td width="25%">${item[2]}</td>
-          <td width="25%">${item[3]}</td>
-          <td width="25%">${item[4]}</td>
+          <td width="20%">${item[1]} ${item[2]}</td>
+          <td width="20%">${item[3]}</td>
+          <td width="20%">${item[4]}</td>
+          <td width="20%">${item[5]}</td>
+          <td width="20%">${item[6]}</td>
         </tr>
         ''';
-      index += 1;
     }
 
     return result;
   }
 
+  // String get html => '''
+  //   <style>
+  //     table {
+  //       border-collapse: collapse;
+  //     }
+  //   </style>
+  //    <table>
+  //     <tr>
+  //       <th width="100%" colspan="4">Description</th>
+  //     </tr>
+  //     <tr>
+  //       <th width="50%" colspan="2" style="border-bottom-style:dashed;">Qty</th>
+  //       <th width="25%" style="border-bottom-style:dashed;">Unit Price</th>
+  //       <th width="25%" style="border-bottom-style:dashed;">Sub Total</th>
+  //     </tr>
+  //   '''
+  //     + generateRows()
+  //     + '''</table>''';
+
   String get html => '''
-    <style>
-      table {
-        border-collapse: collapse;
-      }
-    </style>
-     <table>
-      <tr>
-        <th width="100%" colspan="4">Description</th>
-      </tr>
-      <tr>
-        <th width="50%" colspan="2" style="border-bottom-style:dashed;">Qty</th>
-        <th width="25%" style="border-bottom-style:dashed;">Unit Price</th>
-        <th width="25%" style="border-bottom-style:dashed;">Sub Total</th>
-      </tr>
-    '''
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+  </style>
+   <table>
+    <tr>
+      <th width="20%" style="border-top-style:dashed;">DESC</th>
+      <th width="20%" style="border-top-style:dashed;">PRICE</th>
+      <th width="20%" style="border-top-style:dashed;">Disc</th>
+      <th width="20%" style="border-top-style:dashed;">AMOUNT</th>
+      <th width="20%" style="border-top-style:dashed;">TAX CODE</th>
+    </tr>
+    <tr>
+      <th width="20%" style="border-bottom-style:dashed;">QTY</th>
+      <th width="20%" style="border-bottom-style:dashed;">RM</th>
+      <th width="20%" style="border-bottom-style:dashed;"></th>
+      <th width="20%" style="border-bottom-style:dashed;">RM</th>
+      <th width="20%" style="border-bottom-style:dashed;"></th>
+    </tr>
+  '''
       + generateRows()
       + '''</table>''';
 
