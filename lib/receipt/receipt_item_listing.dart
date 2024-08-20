@@ -201,7 +201,7 @@ class ReceiptItemListingV2 {
     <tr>
       <th width="20%" style="border-top-style:dashed;">DESC</th>
       <th width="20%" style="border-top-style:dashed;">PRICE</th>
-      <th width="20%" style="border-top-style:dashed;">Disc</th>
+      <th width="20%" style="border-top-style:dashed;">DISC</th>
       <th width="20%" style="border-top-style:dashed;">AMOUNT</th>
       <th width="20%" style="border-top-style:dashed;">TAX CODE</th>
     </tr>
